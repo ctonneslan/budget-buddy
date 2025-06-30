@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Budget Buddy</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Budget Buddy</h1>
+  </header>
+
+  <main>
+    <section id="expense-form">
+      <h2>Add Expense</h2>
+      <form id="add-expense-form">
+        <input type="number" id="amount" placeholder="Amount ($)" required min="0.01" step="0.01" />
+        <input type="text" id="category" placeholder="Category" required />
+        <input type="date" id="date" required />
+        <button type="submit">Add</button>
+      </form>
+    </section>
+
+    <section id="expense-list">
+      <h2>Expenses</h2>
+      <label for="category-filter" style="color: #f3f4f6;">Filter by Category:</label>
+      <select id="category-filter">
+        <option value="all">All</option>
+      </select>
+      <div style="margin-top: 1rem; color: #f3f4f6;">
+      <label for="start-date">Start Date:</label>
+      <input type="date" id="start-date" />
+      <label for="end-date" style="margin-left: 1rem;">End Date:</label>
+      <input type="date" id="end-date" />
+    </div>
+
+      <ul id="expenses"></ul>
+    </section>
+
+    <section id="charts">
+      <h2>Spending Overview</h2>
+      <canvas id="spending-chart"></canvas>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
